@@ -158,5 +158,43 @@ void addpps()
 	else {
 		cout << "Error: Could not open master list file." << endl;
 	}
+	void menu()
+{
+    int x;
+    bool running = true;
+
+    while (running)
+    {
+        cout << "\n==============================\n";
+        cout << " Flood Relocation System Menu\n";
+        cout << "==============================\n";
+        cout << "1. Flood Victim\n";
+        cout << "2. Admin\n";
+        cout << "3. Exit\n";
+        cout << "Please choose your desired action: ";
+        cin >> x;
+
+        switch (x)
+        {
+        case 1:
+            victim();
+            break;
+
+        case 2:
+            admin();
+            break;
+
+        case 3:
+            cout << "Thank you for using the system. Stay safe!\n";
+            running = false;
+            break;
+
+        default:
+            cout << "Invalid choice. Please try again.\n";
+        }
+    }
+
+    return 0;
+}
 }
 ;
