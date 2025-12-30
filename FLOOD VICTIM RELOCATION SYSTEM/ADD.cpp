@@ -3,34 +3,48 @@
 #include<string>
 using namespace std;
 
-//array
 string ppsname[100];
 string ppsbil[100];
 
 void victim();
 void admin();
 void addpps();
-//void summary();
+void menu();
 
-int main()
-{
-	int x;
-	cout << "Please choose your desire action" << endl;
-	cout << "1.Flood Victim" << endl << "2.Admin" << endl;
-	cin >> x;
-	switch (x)
-	{
-	case 1:
-		victim();
-		break;
-	case 2:
-		admin();
-		break;
-	}
+int main() {
+    int choice;
+    do {
+        menu(); 
+        cin >> choice;
 
-	return 0;
-};
+        switch (choice) {
+            case 1:
+                victim(); 
+                break;
+            case 2:
+                admin(); 
+                break;
+            case 3:
+                cout << "Exiting system. Stay safe!" << endl;
+                break;
+            default:
+                cout << "Invalid option. Please try again." << endl;
+        }
+        
+    } while (choice != 3);
 
+    return 0;
+}
+
+void menu() {
+    cout << "\n======================================" << endl;
+    cout << "   FLOOD RELOCATION SYSTEM (MELAKA)   " << endl;
+    cout << "======================================" << endl;
+    cout << "1. Register as Flood Victim" << endl;
+    cout << "2. Administrator Login" << endl;
+    cout << "3. Exit" << endl;
+    cout << "Please choose your desired action: ";
+}
 void victim()
 {
 	ifstream readMaster("all_location.txt");
